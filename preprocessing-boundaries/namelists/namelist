@@ -1,0 +1,20 @@
+&config
+   cfin  = 'input.nc'
+   cvar  = 'sithick'
+   catt  = '_FillValue'
+   im    = 4320
+   jm    = 840
+   km    = 50
+   cvlom = 'longitude'
+   cvlam = 'latitude'
+   cvdm  = 'depth'
+   io    = 528
+   jo    = 603
+   ko    = 75
+   cfmo  = 'mesh_mask_CREG025.nc'
+   cvmso = 'tmask'
+   cvloo = 'nav_lon'
+   cvlao = 'nav_lat'
+   cvdo  = 'nav_lev'
+   lcal  = .true.
+/

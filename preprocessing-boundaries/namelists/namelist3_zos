@@ -1,0 +1,22 @@
+&config
+   cfin  = 'input.nc'
+   cvar  = 'zos_foam'
+   catt  = '_FillValue'
+   im    = 1440
+   jm    = 681
+   km    = 75
+   cvlom = 'longitude'
+   cvlam = 'latitude'
+   cvdm  = 'depth'
+   io    = 589
+   jo    = 249
+   ko    = 72
+   cfmo  = 'mesh_mask.nc'
+   cvmso = 'tmask'
+   cvloo = 'glamt'
+   cvlao = 'gphit'
+   cvdo  = 'nav_lev'
+   lcal  = .true.
+   cunit = 'm'
+   clnm  = 'Sea surface height'
+/
