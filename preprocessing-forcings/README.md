@@ -91,8 +91,8 @@ These parameter are the [eastward](https://codes.ecmwf.int/grib/param-db/165) ($
 https://github.com/ftucciarone/Med12/blob/6733a2eacd2244d05870f1bbe636c14d8648cd32/preprocessing-era5/python/runproc_10m_components_of_wind.py#L1-L50
 
 <p align="center">
-  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-era5/python/figures/u10m_wind.gif?raw=true" alt="animated" />
-  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-era5/python/figures/v10m_wind.gif?raw=true" alt="animated" />
+  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-forcings/figures/u10m_wind.gif?raw=true" alt="animated" />
+  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-forcings/figures/v10m_wind.gif?raw=true" alt="animated" />
 </p>
 
 
@@ -102,7 +102,7 @@ This parameter is the temperature of air at 2m above the surface of land, sea or
 https://github.com/ftucciarone/Med12/blob/6733a2eacd2244d05870f1bbe636c14d8648cd32/preprocessing-era5/python/runproc_2m_temperature.py#L1-L41
 
 <p align="center">
-  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-era5/python/figures/t2m.gif?raw=true" alt="animated" />
+  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-forcings/figures/t2m.gif?raw=true" alt="animated" />
 </p>
 
 ### Total Precipitation (`precip`)
@@ -114,7 +114,7 @@ This parameter is the total amount of [water accumulated over a particular time 
 https://github.com/ftucciarone/Med12/blob/6733a2eacd2244d05870f1bbe636c14d8648cd32/preprocessing-era5/python/runproc_total_precipitation.py#L1-L41
 
 <p align="center">
-  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-era5/python/figures/total_precip.gif?raw=true" alt="animated" />
+  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-forcings/figures/total_precip.gif?raw=true" alt="animated" />
 </p>
 
 ### Snowfall (`snow`)  
@@ -125,7 +125,7 @@ This parameter is the total amount of [water accumulated over a particular time 
 https://github.com/ftucciarone/Med12/blob/6733a2eacd2244d05870f1bbe636c14d8648cd32/preprocessing-era5/python/runproc_snowfall.py#L1-L41
 
 <p align="center">
-  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-era5/python/figures/snowfll.gif?raw=true" alt="animated" />
+  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-forcings/figures/snowfll.gif?raw=true" alt="animated" />
 </p>
 
 ### Surface Solar Radiation Downwards (`swrd`)
@@ -140,7 +140,7 @@ This parameter [is accumulated over a particular time period which depends on th
 https://github.com/ftucciarone/Med12/blob/6733a2eacd2244d05870f1bbe636c14d8648cd32/preprocessing-era5/python/runproc_surface_solar_radiation_downwards.py#L1-L41
 
 <p align="center">
-  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-era5/python/figures/swrd.gif?raw=true" alt="animated" />
+  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-forcings/figures/swrd.gif?raw=true" alt="animated" />
 </p>
 
 ### Surface Thermal Radiation Downwards (`lwrd`)
@@ -153,7 +153,7 @@ This parameter [is accumulated over a particular time period which depends on th
 https://github.com/ftucciarone/Med12/blob/6733a2eacd2244d05870f1bbe636c14d8648cd32/preprocessing-era5/python/runproc_surface_thermal_radiation_downwards.py#L1-L41
 
 <p align="center">
-  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-era5/python/figures/lwrd.gif?raw=true" alt="animated" />
+  <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-forcings/figures/lwrd.gif?raw=true" alt="animated" />
 </p>
 
 
