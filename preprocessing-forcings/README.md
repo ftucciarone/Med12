@@ -137,7 +137,7 @@ To a reasonably good approximation, this parameter is the model equivalent of wh
 
 This parameter [is accumulated over a particular time period which depends on the data extracted](https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation#ERA5:datadocumentation-Meanrates/fluxesandaccumulations). The units are joules per square metre (J m-2). To convert to watts per square metre (W m-2), the accumulated values should be divided by the accumulation period expressed in seconds.
 
-https://github.com/ftucciarone/Med12/blob/6733a2eacd2244d05870f1bbe636c14d8648cd32/preprocessing-era5/python/runproc_surface_solar_radiation_downwards.py#L1-L41
+https://github.com/ftucciarone/Med12/blob/6733a2eacd2244d05870f1bbe636c14d8648cd32/preprocessing-forcings/python/runproc_surface_solar_radiation_downwards.py#L1-L41
 
 <p align="center">
   <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-forcings/figures/swrd.gif?raw=true" alt="animated" />
