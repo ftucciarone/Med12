@@ -1,13 +1,14 @@
 > [!WARNING]
-> This configuration is based upon the configuration described in: 
-> > Storto A., Essa Y, de Toma V., Anav A., Sannino G., Santoleri R., Yang C., (2023): MESMAR v1: A new regional coupled climate model for downscaling, predictability, and data assimilation studies in the Mediterranean region. [doi](https://doi.org/10.5194/gmd-16-4811-2023). 
+> The NEMO configuration in this repository is the ocean component of the regional climate model described in: 
+> > Storto A., Essa Y, de Toma V., Anav A., Sannino G., Santoleri R., Yang C., (2023): MESMAR v1: A new regional coupled climate model for downscaling, predictability, and data assimilation studies in the Mediterranean region. [https://doi.org/10.5194/gmd-16-4811-2023](https://doi.org/10.5194/gmd-16-4811-2023). 
 >
-> that was provided to the owner of this repository (Francesco Tucciarone) by the original author, Andrea Storto. 
+> It was provided to the owner of this repository (Francesco Tucciarone) by the original author of the paper, Andrea Storto. The owner of this repository (Francesco Tucciarone) was not involved in the development of such configuration, thus he shall not be cited when citing the MESMAR configuration. 
 >
-> The owner of this repository (Francesco Tucciarone) was not involved in the development of such configuration, thus he shall not be cited when citing the MESMAR configuration. 
+> The scripts to perform the preprocessing steps (i.e. the atmospheric forcing and lateral boundary conditions generation) were also provided by Andrea Storto, but here we report new routines, rewritten and adapted by Francesco Tucciarone.
 >
-> The data published under zenodo is a minimal set of data necessary to run the configuration and to create the forcing and boundary conditions with the scripts included in this repository. These scripts were provided by Andrea Storto and were modified by Francesco Tucciarone. This repository includes only the modified version and not the originals.
+> The data published under zenodo is a minimal set of data necessary to run the configuration and to create the forcing and boundary conditions with the scripts included in this repository. This data was provided by Andrea Storto. The owner of this repository was not involved in the construction of such data. 
 >
+> TL;DR: if you use this configuration without LU stochasticity, cite Andrea's paper, not me. 
 > Francesco L. Tucciarone
 
 # MED12: a Mediterranean Sea configuration 
