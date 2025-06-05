@@ -8,7 +8,7 @@
 >
 > The data published under zenodo is a minimal set of data necessary to run the configuration and to create the forcing and boundary conditions with the scripts included in this repository. This data was provided by Andrea Storto. The owner of this repository was not involved in the construction of such data. 
 >
-> TL;DR: if you use this configuration without LU stochasticity, cite Andrea's paper, not me. \n 
+> TL;DR: if you use this configuration without LU stochasticity, cite Andrea's paper, not me. <br/>
 > Francesco L. Tucciarone
 
 # MED12: a Mediterranean Sea configuration 
