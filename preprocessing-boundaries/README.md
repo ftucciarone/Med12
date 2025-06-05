@@ -101,8 +101,11 @@ debug=false
 ```
 
 ## Pipeline overview
-
+This section roughly explains the operations performed in the `copernicus_get-and-process.sh` script. 
 #### Preparing the envirnoment
+The first part of the script sources the relevant variables and a python environment. This latter is needed for the Copernicus command line to work. See [the Command Line Interface documentation](https://help.marine.copernicus.eu/en/articles/7972861-copernicus-marine-toolbox-cli-subset) for more information.
+
+After sourcing, the `work` and `archive` directories are made (if not already existing, with the `mkdir -p` command), and the location is changed to `work`. Inside `work`, all the relevant executables are linked, along with the important static data (such as `mesh_mask.nc` and `coordinates.bdy.nc`, the latter being renamed due to a hardcoded name in the Fortran source). `startDate` and `endDate` are set, based on command line arguments or preset values.
 ```shell
 # Source the parameters
 source ~/python_env/bin/activate
@@ -172,7 +175,7 @@ endDate=$($datecommand -d "$endDate + $addDays days" +%Y-%m-%d)
 ```
 
 #### Time looping and folder organization
-
+The program will run day by day from `startDate` to `endDate`. For each new year and new month it will create a new folder to store the scratch data and the final product. It also initialise a `dataloc_dir` where the interesting subset of the original data (in this case the Mediterranean sea) is retained, cropping all the rest (compare with the data in `dataglo_dir`, which is still global).
 ```shell
 # Time range loop
 while [[ "$startDate" != "$endDate" ]]; do
@@ -195,12 +198,26 @@ while [[ "$startDate" != "$endDate" ]]; do
     mkdir -p $dataglo_dir
     mkdir -p $dataloc_dir
     mkdir -p $archive_dir
+
+    [...Download and Process sections...] 
+
+    # Update the startdate and go on
+    startDate=$($datecommand -d "$startDate + $addDays days" +%Y-%m-%d)
+
+done
+    
+# Cleanup
+unlink input.nc
+unlink m2r_nn.x
+unlink corr_vect.x
+unlink mesh_mask.nc
+unlink coord_bdy.nc
 ```
 
 
-#### Downloading
+#### Download section
 ```shell
-# Create download command 
+    # Create download command 
     command="copernicusmarine subset \
     --username=$username \
     --password=$password \
@@ -227,9 +244,14 @@ while [[ "$startDate" != "$endDate" ]]; do
     fi
 ```
 
-#### Processing 
+#### Process section
 
 ```shell
+    # ###############################################################################################################
+    # 
+    # Processing section 
+    #
+    # ###############################################################################################################
     # if -pr true then process the raw data
     if $4 ; then
 
