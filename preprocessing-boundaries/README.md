@@ -1,7 +1,26 @@
 ## Preprocessing boundary conditions for the Med12 configuration
-
-
-
+To download the data from the [Copernicus Marine Service](https://marine.copernicus.eu) and process it to create boundary files, the main scrpt is `copernicus_get-and-process.sh`. It can be invoked without arguments to show its usage. The list of arguments is:
+```shell
+Usage: ./copernicus_get-and-process.sh -dl true/false -pr true/false -fd YYYY-MM-DD -ld YYYY-MM-DD
+      where
+             -dl (true/false): option to download the files
+             -pr (true/false): option to process the data
+             -fd (YYYY-MM-DD): first day to process
+             -ld (YYYY-MM-DD): last day to process
+```
+An example of usage would be
+```shell
+Usage: ./copernicus_get-and-process.sh -dl true -pr false -fd 2020-01-01 -ld 2020-01-31
+```
+to download the data from January 1st to January 31st 2020, without processing them, or
+```shell
+Usage: ./copernicus_get-and-process.sh -dl false -pr true -fd 2020-01-01 -ld 2020-01-31
+```
+to process data that has already been downloaded, or
+```shell
+Usage: ./copernicus_get-and-process.sh -dl true -pr true -fd 2020-01-01 -ld 2020-01-31
+```
+to download and process the data. For the script to run smoothly, one has to set the following parameters in two different files:
 ##### `Copernicus_credentials.sh`
 In the file `copernicus_credentials.sh` we store the credentials to log in the [Copernicus Marine Service](https://marine.copernicus.eu). Once registration is completed and a username and password are attributed, they can be stored in this file (which by default is not updated by Git through the instruction `git update-index --assume-unchanged preprocessing-boundaries/copernicus_credentials.sh`), that is sourced by the processing files.
 ```shell
@@ -19,10 +38,11 @@ username=***********
 password=**********
 ``` 
 #### `Copernicus_params.sh`
-This file contains the main variables needed to run the download and process script. In particular we have
-* `firstDate` and `lastDate` are preset values that should be overridden via command line. If not, we download and process only one day (01/01/2020)
+This file contains the main variables needed to run the download and process script. In particular we have:
+* `firstDate` and `lastDate` are preset values that should be overridden via command line. If not, we download and process only one day (01/01/2020). Feel free to modify these parameters to bypass command line arguments.
 * `dataset_id` is the reference of the Copernicus Marine dataset. We have chosen an [Ocean Reanalysis Dataset](https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030) (and included the [supporting documentation](CMEMS-GLO-QUID-001-030.pdf)) as we need three dimensional ocean fields for the lateral boundary conditions.
 * `dataset_type` is a string that might be useful if multiple products are contained in the same file and variables inside are differentiated (e.g. `thetao_oras` vs `thetao_glorys`). In this specific case, only `oras` variables are accounted.
+* `data_filename` is the prefix of the downloaded data.
 * `prefix` is a prefix to be given to the finished file.
 * `variables` and `types` are two lists of variabels and dimension, in 1-1 relation, that include the name of the variable (without type) and its dimension. The script will automatically process all the variables listed.
 * `work` is a scratch directory that is created when launching the program, then the program will `cd` inside and link all the necessary programs inside said directory. Copies of the data are also stored inside work. At last, when the final product is finished, it is moved outside of `work`. This directory will be very heavy.
