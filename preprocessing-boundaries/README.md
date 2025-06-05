@@ -21,7 +21,7 @@ password=**********
 #### `Copernicus_params.sh`
 This file contains the main variables needed to run the download and process script. In particular we have
 * `firstDate` and `lastDate` are preset values that should be overridden via command line. If not, we download and process only one day (01/01/2020)
-* `dataset_id` is the reference of the Copernicus Marine dataset. We have chosen an [Ocean Reanalysis Dataset]() (and included the [supporting documentation]()) as we need three dimensional ocean fields for the lateral boundary conditions.
+* `dataset_id` is the reference of the Copernicus Marine dataset. We have chosen an [Ocean Reanalysis Dataset](https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030) (and included the [supporting documentation](preprocessing-boundaries/CMEMS-GLO-QUID-001-030.pdf)) as we need three dimensional ocean fields for the lateral boundary conditions.
 * `dataset_type` is a string that might be useful if multiple products are contained in the same file and variables inside are differentiated (e.g. `thetao_oras` vs `thetao_glorys`). In this specific case, only `oras` variables are accounted.
 * `prefix` is a prefix to be given to the finished file.
 * `variables` and `types` are two lists of variabels and dimension, in 1-1 relation, that include the name of the variable (without type) and its dimension. The script will automatically process all the variables listed.
