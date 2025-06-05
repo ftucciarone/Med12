@@ -21,7 +21,7 @@
 #
 # ###############################################################################
 
-# Date initialization (always use one leaginf zero)
+# Date initialization 
 firstDate="2020-01-01"
 lastDate="2020-01-01"
 
@@ -49,38 +49,4 @@ exe_bdy=../tools/create_bdy
 
 # Debug flag (if true, only prints on screen the commands)
 debug=false
-
-
-
-
-
-
-
-
-# Check operating system 
-# (shamelessly copied from https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script )
-echo " Operating system type is: "$OSTYPE
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    # linux-type system
-    datecommand=date
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    # Mac OSX
-    datecommand=gdate
-elif [[ "$OSTYPE" == "cygwin" ]]; then
-    # POSIX compatibility layer and Linux environment emulation for Windows
-    datecommand=date
-elif [[ "$OSTYPE" == "msys" ]]; then
-    # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-    datecommand=date
-elif [[ "$OSTYPE" == "win32" ]]; then
-    # I'm not sure this can happen.
-    datecommand=
-elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    # FreeBSD
-    datecommand=date
-else
-    echo " Operating system not recognized"
-    exit -2
-fi
-
 
