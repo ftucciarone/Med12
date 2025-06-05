@@ -111,7 +111,7 @@ This parameter is the accumulated liquid and frozen water, comprising rain and s
 This parameter is the total amount of [water accumulated over a particular time period which depends on the data extracted](https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation#ERA5:datadocumentation-Meanrates/fluxesandaccumulations). The units of this parameter are depth in metres of water equivalent. It is the depth the water would have if it were spread evenly over the grid box.
 
 
-https://github.com/ftucciarone/Med12/blob/6733a2eacd2244d05870f1bbe636c14d8648cd32/preprocessing-era5/python/runproc_total_precipitation.py#L1-L41
+https://github.com/ftucciarone/Med12/blob/ea1ac15020b80a242900e76f2310e64b46ab35fb/preprocessing-forcings/python/runproc_total_precipitation.py#L1-L41
 
 <p align="center">
   <img src="https://github.com/ftucciarone/Med12/blob/main/preprocessing-forcings/figures/total_precip.gif?raw=true" alt="animated" />
