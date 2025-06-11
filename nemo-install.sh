@@ -29,8 +29,11 @@ export FCFLAGS_f90="-O3 -fPIC "
 # directories
 export WORKDIR=$ROOT/nemo-deps/sources
 export INSTDIR=$ROOT/nemo-deps/installs
+export XIOSDIR=$ROOT/nemo-deps/XIOS
 mkdir -p $WORKDIR
 mkdir -p $INSTDIR
+mkdir -p $XIOSDIR
+
 
 
 
@@ -99,9 +102,7 @@ make -j1
 #make check
 make install
 
-cd $WORKDIR
-mkdir -p XIOS
-cd XIOS
+cd $XIOSDIR
 svn co -r 2481 http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/branchs/xios-2.5 xios-2.5
 cd xios-2.5
 ./make_xios --arch local --job 32
