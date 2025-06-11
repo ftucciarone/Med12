@@ -103,7 +103,9 @@ make -j1
 make install
 
 cd $XIOSDIR
-svn co -r 2481 http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/branchs/xios-2.5 xios-2.5
+git clone -b xios-2.5 https://github.com/ftucciarone/XIOS.git xios-2.5
+git clone -b arch-local https://github.com/ftucciarone/XIOS.git arch-local
 cd xios-2.5
+cp ../arch-local/arch-local.* arch/
 ./make_xios --arch local --job 32
 
