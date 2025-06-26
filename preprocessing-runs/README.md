@@ -6,7 +6,7 @@ export MED12=/path/to/local/Med12/folder
 
 ### 1. Build tools
 First, one needs to compile the Fortran codes that are invoked by the script. This process should be automatic. There are two main set of tools to be compiled, those to process the forcing and those to process the lateral boundaries.
-##### Atmospheric forcing
+#### Atmospheric forcing
 ```shell
 cd $MED12/preprocessing-forcing/tools
 chmod +x compiletools.sh
@@ -33,6 +33,28 @@ If the compilation fails, open `compiletools.sh` to try resolve the problem. The
 > #nc_config__which=$( which nc-config ) || { echo "which nc-config failed: check syntax or specify directly the path."; exit ; }
 > #nf_config__which=$( which nf-config ) || { echo "which nf-config failed: check syntax or specify directly the path."; exit ; }
 > ```
+#### Lateral boundary conditions
+```shell
+cd $MED12/preprocessing-boundaries/tools
+chmod +x compile_bdy.sh; ./compile_bdy.sh
+chmod +x compile_fill.sh; ./compile_fill.sh
+```
+This should compile the boundary generation scripts and the land filling algorithm. 
+> [!TIP]
+> This set of tools use NetCDF. Linking can be done, similarly to the previous section, in the `NetCDF.macro` file. In particular, pay attention to the lines:
+> ```shell
+> #nc_config__which=/usr/bin/nc-config
+> nc_config__which=$( which nc-config ) || { echo "which nc-config failed: check syntax or specify directly the path."; exit ; }
+> [...]
+> #nf_config__which=/usr/bin/nf-config
+> nf_config__which=$( which nf-config ) || { echo "which nf-config failed: check syntax or specify directly the path."; exit ; }
+> ```
+> and follow the same guidelines.
+##### SOSIE
+```shell
+cd $MED12/preprocessing-boundaries/tools/sosie_new
+make
+```
 
 ### 2. Link the tools
 The main script is `build_runs_and_forcings.sh`, and can be invoked simply as
