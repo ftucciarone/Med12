@@ -1,10 +1,5 @@
 #!/bin/sh
 #set -x
-
-COMP="ifort"
-NCDF=/opt/intel/netcdf-c-4.7.4-f-4.5.3-impi
-ADD=""
-
 #
 # Netcdf stuff: to know how to add NetCDF links just run the command "nc-config --all"
 #               and then take the following entries:
@@ -16,14 +11,17 @@ ADD=""
 #
 #
 
-nc_config__which=/usr/bin/nc-config
+nc_config__which=/home/ftucciar/nemo-dep/installs/bin/nc-config
+nf_config__which=/home/ftucciar/nemo-dep/installs/bin/nf-config
 nc_config__which=$( which nc-config ) || { echo "which nc-config failed: check syntax or specify directly the path."; exit ; }
-nc_config__fflags=$( $nc_config__which --fflags ) || { echo "nc-config --flags failed: check syntax."; exit ; }
-nc_config__flibs=$( $nc_config__which --flibs) || { echo "nc-config --flibs failed:check syntax."; exit ; }
-nc_config__fc=$( $nc_config__which --fc) || { echo "nc-config --fc failed:check syntax or specify the compiler."; exit ; }
+nf_config__which=$( which nf-config ) || { echo "which nf-config failed: check syntax or specify directly the path."; exit ; }
+
+nc_config__fflags=$( $nf_config__which --fflags ) || { echo "nc-config --flags failed: check syntax."; exit ; }
+nc_config__flibs=$( $nf_config__which --flibs) || { echo "nc-config --flibs failed:check syntax."; exit ; }
+nc_config__fc=$( $nf_config__which --fc) || { echo "nc-config --fc failed:check syntax or specify the compiler."; exit ; }
 
 
-COMP="$nc_config__fc -Ofast -fbounds-check -Wall -Wno-uninitialized -ffree-line-length-512 "
+COMP="$nc_config__fc -Ofast -fbounds-check -Wall -Wno-uninitialized -ffree-line-length-512 -fopenmp"
 
 # Former "compile_fillLand.sh"
 
