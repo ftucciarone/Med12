@@ -65,7 +65,8 @@ make
 > NETCDF_PATH=/path/to/NetCDF/prefix
 > ```
 
-
+> [!IMPORTANT]
+> One these three tools have been compiled, you can leave the `preprocessing-forcing` and `preprocessing-boundaries` folders **forever**. Jokes aside, the whole automated pipeline is in `preprocessing-runs` and you should go back to the forcing and boudnaries folder just to see the documentation in there. The bash scripts contained there are a reference for the operations, but are not maintained, Python scripts neither.
 
 
 ### 2. Link the tools
