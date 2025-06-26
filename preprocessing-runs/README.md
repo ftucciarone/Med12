@@ -60,7 +60,7 @@ make
 > ```shell
 > nf-config --prefix
 > ``` 
-and to copy paste the path returned in the `make.macro` file for the following variable: 
+> and to copy paste the path returned in the `make.macro` file for the following variable: 
 > ```shell
 > NETCDF_PATH=/path/to/NetCDF/prefix
 > ```
