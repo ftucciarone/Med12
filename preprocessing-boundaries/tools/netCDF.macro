@@ -14,8 +14,6 @@ nc_config__libdir=$( $nc_config__which --libdir) || { echo "nc-config --libdir f
 nc_config__cflags=$( $nc_config__which --cflags ) || { echo "nc-config --cflags failed: check syntax."; exit ; }
 nc_config__libs=$( $nc_config__which --libs) || { echo "nc-config --libs failed:check syntax."; exit ; }
 
-
-
 #nf_config__which=/usr/bin/nf-config
 nf_config__which=$( which nf-config ) || { echo "which nf-config failed: check syntax or specify directly the path."; exit ; }
 nf_config__fc=$( $nf_config__which --fc) || { echo "nf-config --fc failed:check syntax or specify the compiler."; exit ; }

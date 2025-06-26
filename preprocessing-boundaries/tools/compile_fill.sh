@@ -3,7 +3,7 @@ source netCDF.macro
 # Compiler options and flags: 
 #              
 #
-gFort_flags=" -Ofast -fbounds-check  -Wno-uninitialized -ffree-line-length-512 "
+gFort_flags=" -Ofast -fbounds-check  -Wno-uninitialized -ffree-line-length-512 -fopenmp"
 iFort_flags=""
 
 comp_flags=
