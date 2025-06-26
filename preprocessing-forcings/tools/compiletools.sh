@@ -11,8 +11,8 @@
 #
 #
 
-nc_config__which=/home/ftucciar/nemo-dep/installs/bin/nc-config
-nf_config__which=/home/ftucciar/nemo-dep/installs/bin/nf-config
+nc_config__which=/home/$USER/nemo-dep/installs/bin/nc-config
+nf_config__which=/home/$USER/nemo-dep/installs/bin/nf-config
 nc_config__which=$( which nc-config ) || { echo "which nc-config failed: check syntax or specify directly the path."; exit ; }
 nf_config__which=$( which nf-config ) || { echo "which nf-config failed: check syntax or specify directly the path."; exit ; }
 

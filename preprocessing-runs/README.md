@@ -16,8 +16,8 @@ If the compilation fails, open `compiletools.sh` to try resolve the problem. The
 *Troubleshooting*
 This set of tools use NetCDF. Linking can be done with in the following section of `compiletools.sh`:
 ```shell
-nc_config__which=/home/ftucciar/nemo-dep/installs/bin/nc-config
-nf_config__which=/home/ftucciar/nemo-dep/installs/bin/nf-config
+nc_config__which=/home/$USER/nemo-dep/installs/bin/nc-config
+nf_config__which=/home/$USER/nemo-dep/installs/bin/nf-config
 nc_config__which=$( which nc-config ) || { echo "which nc-config failed: check syntax or specify directly the path."; exit ; }
 nf_config__which=$( which nf-config ) || { echo "which nf-config failed: check syntax or specify directly the path."; exit ; }
 ```
