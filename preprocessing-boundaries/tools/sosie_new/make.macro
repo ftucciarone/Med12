@@ -4,11 +4,13 @@
 # Fortran compiler:
 FC = /usr/bin/mpif90
 
+NETCDF_PATH=/home/${USER}/nemo-dep/installs
+
 # Root directory for Netcdf:
-NETCDF_DIR = /home/ftucciar/nemo-dep/installs -I/home/ftucciar/nemo-dep/installs
+NETCDF_DIR = ${NETCDF_PATH} -I${NETCDF_PATH}
 
 # Linking argument: usually -lnetcdf or -lnetcdff (or both):
-L_NCDF = -L/home/ftucciar/nemo-dep/installs/lib -lnetcdff -Wl,-rpath,/home/ftucciar/nemo-dep/installs/lib -L/home/ftucciar/nemo-dep/installs/lib -lnetcdf -lhdf5_hl -lhdf5 -lz -lcurl -lnetcdf -lnetcdf -ldl -lm -lmpi
+L_NCDF = -L${NETCDF_PATH}/lib -lnetcdff -Wl,-rpath,${NETCDF_PATH}/lib -L${NETCDF_PATH}/lib -lnetcdf -lhdf5_hl -lhdf5 -lz -lcurl -lnetcdf -lnetcdf -ldl -lm -lmpi
 
 # Fortran compilation flags:
 

@@ -55,6 +55,18 @@ This should compile the boundary generation scripts and the land filling algorit
 cd $MED12/preprocessing-boundaries/tools/sosie_new
 make
 ```
+> [!TIP]
+> Again, there is the need to link NetCDF libraries. Here, we cannot use the previous trick as SOSIE is compiled through a makefile and not through shell scripting. However, it boils down to run
+> ```shell
+> nf-config --prefix
+> ``` 
+and to copy paste the path returned in the `make.macro` file for the following variable: 
+> ```shell
+> NETCDF_PATH=/path/to/NetCDF/prefix
+> ```
+
+
+
 
 ### 2. Link the tools
 The main script is `build_runs_and_forcings.sh`, and can be invoked simply as
